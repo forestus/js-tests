@@ -1,0 +1,20 @@
+{
+  "name": "js-tests",
+  "version": "1.0.0",
+  "description": "testes diversos com javascript",
+  "main": "examples.js",
+  "scripts": {
+    "start": "node examples.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TriiCksTeR/js-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TriiCksTeR/js-tests/issues"
+  },
+  "homepage": "https://github.com/TriiCksTeR/js-tests#readme"
+}
