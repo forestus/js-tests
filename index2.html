@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@webtor/player-sdk-js/dist/index.min.js" charset="utf-8" async></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="player" class="webtor" />
+    <script>
+        window.webtor = window.webtor || [];
+        window.webtor.push({
+            id: 'player',
+            magnet: "magnet:?xt=urn:btih:5badfee0dda1fe47f9df3a0b82e3c93e34762c94&dn=[Erai-raws] Tensura Nikki - Tensei Shitara Slime Datta Ken - 01 [1080p HEVC][Multiple Subtitle]",
+            on: function(e) {
+                if (e.name == window.webtor.TORRENT_FETCHED) {
+                    console.log('Torrent fetched!', e.data);
+                }
+                if (e.name == window.webtor.TORRENT_ERROR) {
+                    console.log('Torrent error!');
+                }
+            },
+            poster: 'https://via.placeholder.com/150/0000FF/808080',
+            subtitles: [
+                {
+                    srclang: 'en',
+                    label: 'test',
+                    src: 'https://raw.githubusercontent.com/andreyvit/subtitle-tools/master/sample.srt',
+                    default: true,
+                }
+            ],
+            lang: 'en',
+            i18n: {
+                en: {
+                    common: {
+                        "prepare to play": "Preparing Video Stream... Please Wait...",
+                    },
+                    stat: {
+                        "seeding": "Seeding",
+                        "waiting": "Client initialization",
+                        "waiting for peers": "Waiting for peers",
+                        "from": "from",
+                    },
+                },
+            },
+        });
+    </script>
+
+</body>
+</html>

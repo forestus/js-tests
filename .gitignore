@@ -1,0 +1,11 @@
+credentials
+*/node_modules
+*/**/node_modules
+*.mkv
+*.m4v
+*.mp4
+uploadVideo/src/controllers/google-oauth2-credentials.json
+uploadVideo/src/data/oauth_key.json
+uploadVideo/src/data/*
+uploadVideo/google-oauth2-credentials.json
+uploadVideo/client_secret.json

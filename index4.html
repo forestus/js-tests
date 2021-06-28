@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matroska Subtitles</title>
+  <script src="https://cdn.jsdelivr.net/npm/matroska-subtitles@3.x/dist/matroska-subtitles.min.js"></script>
+  <script src="stream-http.min.js"></script>
+</head>
+<body>
+    <video id="videoPlayer" width="650" controls autoplay>
+        <source src="http://localhost:3000/stream/Tensura Nikki/[Erai-raws] Tensura Nikki - Tensei Shitara Slime Datta Ken - 10 [480p][Multiple Subtitle].mkv"  type='video/mp4'  />
+        <track kind="subtitles" srclang="pt-BR" label="Português">  
+    </video>
+    <script>
+        console.log(MatroskaSubtitles)
+        const parser = new MatroskaSubtitles.SubtitleParser()
+    
+        // first an array of subtitle track information is emitted
+        parser.once('tracks', (tracks) => console.log(tracks))
+    
+        // afterwards each subtitle is emitted
+        parser.on('subtitle', (subtitle, trackNumber) =>
+          console.log('Track ' + trackNumber + ':', subtitle))
+    
+        parser.on('file', file => console.log('file:', file))
+        var el = document.querySelector("video");
+        
+        console.log(el)
+        httpStream.get("http://localhost:3000/stream/Tensura Nikki/[Erai-raws] Tensura Nikki - Tensei Shitara Slime Datta Ken - 10 [480p][Multiple Subtitle].mkv", res => {
+          res.pipe(parser)
+        })
+      </script>
+</body>
+</html>
