@@ -1,0 +1,4 @@
+- o arquivo json a ser traduzido deve ser colocado na raiz desta pasta
+- verifique o nome do arquivo json importado
+- é necessário informar para qual idioma voce quer alterar no campo "to: 'en'"
+- verifique a saída do nome do arquivo json a ser criado se nao ja existe um com este nome.
